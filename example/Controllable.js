@@ -5,11 +5,11 @@ import {DelayInput} from '../src';
 export class Controllable extends React.Component {
   state = {
     value: '',
-    debouncedValue: ''
+    delayedValue: ''
   };
 
   render() {
-    const {value, debouncedValue} = this.state;
+    const {value, delayedValue} = this.state;
 
     return (
       <div>
@@ -34,8 +34,8 @@ export class Controllable extends React.Component {
               minLength={2}
               delayTimeout={500}
               onChange={e =>
-                this.setState({value: e.target.value, debouncedValue: e.target.value})} />
-            {debouncedValue}
+                this.setState({value: e.target.value, delayedValue: e.target.value})} />
+            {delayedValue}
           </label>
         </div>
       </div>
