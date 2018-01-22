@@ -196,9 +196,6 @@ export class DelayInput extends React.PureComponent {
   render() {
     const {
       element,
-      onChange: _onChange,
-      value: _value,
-      minLength: _minLength,
       forceNotifyByEnter,
       forceNotifyOnBlur,
       onKeyDown,
