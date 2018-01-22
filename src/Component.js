@@ -145,14 +145,19 @@ export class DelayInput extends React.PureComponent {
     } else if (delayTimeout === 0) {
       this.notify = this.doNotify;
     } else {
+      const debounceOpts = {
+        leading,
+        trailing,
+      };
+      // DO NOT set the maxWait option if undefined; it causes debounce to 
+      // maxWait with the default delayTimeout value.
+      if (maxWait !== undefined && maxWait !== null) {
+        debounceOpts.maxWait = maxWait;
+      }
       const debouncedChangeFunc = debounce(event => {
         this.isDebouncing = false;
         this.doNotify(event);
-      }, delayTimeout, {
-        leading,
-        maxWait,
-        trailing,
-      });
+      }, delayTimeout, debounceOpts);
 
       this.notify = event => {
         this.isDebouncing = true;
