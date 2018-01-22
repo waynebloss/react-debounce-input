@@ -1,7 +1,7 @@
 {
   "name": "react-delay-input",
-  "version": "3.2.0-delay",
-  "description": "React component that renders Input with delayed onChange",
+  "version": "4.0.1",
+  "description": "React component that renders an Input with delayed onChange",
   "main": "lib/index.js",
   "config": {
     "component": "DelayInput",
