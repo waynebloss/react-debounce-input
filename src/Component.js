@@ -15,10 +15,13 @@ export class DelayInput extends React.PureComponent {
       PropTypes.number
     ]),
     minLength: PropTypes.number,
+    delayMax: PropTypes.number,
     delayTimeout: PropTypes.number,
     forceNotifyByEnter: PropTypes.bool,
     forceNotifyOnBlur: PropTypes.bool,
-    inputRef: PropTypes.func
+    inputRef: PropTypes.func,
+    leadingNotify: PropTypes.bool,
+    trailingNotify: PropTypes.bool,
   };
 
 
@@ -29,10 +32,13 @@ export class DelayInput extends React.PureComponent {
     onBlur: undefined,
     value: undefined,
     minLength: 0,
+    delayMax: undefined,
     delayTimeout: 100,
     forceNotifyByEnter: true,
     forceNotifyOnBlur: true,
-    inputRef: undefined
+    inputRef: undefined,
+    leadingNotify: false,
+    trailingNotify: true,
   };
 
 
@@ -48,19 +54,39 @@ export class DelayInput extends React.PureComponent {
 
 
   componentWillMount() {
-    this.createNotifier(this.props.delayTimeout);
+    this.createNotifier(this.props);
   }
 
 
-  componentWillReceiveProps({value, delayTimeout}) {
+  componentWillReceiveProps(nextProps) {
     if (this.isDebouncing) {
       return;
     }
-    if (typeof value !== 'undefined' && this.state.value !== value) {
-      this.setState({value});
+    const {
+      delayMax: delayMaxNext,
+      delayTimeout: delayTimeoutNext,
+      leadingNotify: leadingNotifyNext,
+      trailingNotify: trailingNotifyNext,
+      value: valueNext,
+    } = nextProps;
+    if (typeof valueNext !== 'undefined' && this.state.value !== valueNext) {
+      this.setState({
+        value: valueNext
+      });
     }
-    if (delayTimeout !== this.props.delayTimeout) {
-      this.createNotifier(delayTimeout);
+    const {
+      delayMax,
+      delayTimeout,
+      leadingNotify,
+      trailingNotify,
+    } = this.props;
+    if (
+      delayMax !== delayMaxNext ||
+      delayTimeout !== delayTimeoutNext ||
+      leadingNotify !== leadingNotifyNext ||
+      trailingNotify !== trailingNotifyNext
+    ) {
+      this.createNotifier(nextProps);
     }
   }
 
@@ -117,7 +143,13 @@ export class DelayInput extends React.PureComponent {
   };
 
 
-  createNotifier = delayTimeout => {
+  createNotifier(props) {
+    const {
+      delayMax: waitMax,
+      delayTimeout,
+      leadingNotify: leading,
+      trailingNotify: trailing,
+    } = props;
     if (delayTimeout < 0) {
       this.notify = () => null;
     } else if (delayTimeout === 0) {
@@ -126,7 +158,11 @@ export class DelayInput extends React.PureComponent {
       const debouncedChangeFunc = debounce(event => {
         this.isDebouncing = false;
         this.doNotify(event);
-      }, delayTimeout);
+      }, delayTimeout, {
+        leading,
+        maxWait,
+        trailing,
+      });
 
       this.notify = event => {
         this.isDebouncing = true;
@@ -140,7 +176,7 @@ export class DelayInput extends React.PureComponent {
         debouncedChangeFunc.cancel();
       };
     }
-  };
+  }
 
 
   doNotify = (...args) => {
