@@ -53,7 +53,7 @@ export class UndoRedo extends React.Component {
               className="input"
               value={this.state.value}
               minLength={2}
-              debounceTimeout={500}
+              delayTimeout={500}
               forceNotifyOnBlur={false}
               onChange={this.onChange} />
           </label>

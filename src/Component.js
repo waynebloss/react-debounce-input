@@ -15,7 +15,7 @@ export class DelayInput extends React.PureComponent {
       PropTypes.number
     ]),
     minLength: PropTypes.number,
-    debounceTimeout: PropTypes.number,
+    delayTimeout: PropTypes.number,
     forceNotifyByEnter: PropTypes.bool,
     forceNotifyOnBlur: PropTypes.bool,
     inputRef: PropTypes.func
@@ -29,7 +29,7 @@ export class DelayInput extends React.PureComponent {
     onBlur: undefined,
     value: undefined,
     minLength: 0,
-    debounceTimeout: 100,
+    delayTimeout: 100,
     forceNotifyByEnter: true,
     forceNotifyOnBlur: true,
     inputRef: undefined
@@ -48,19 +48,19 @@ export class DelayInput extends React.PureComponent {
 
 
   componentWillMount() {
-    this.createNotifier(this.props.debounceTimeout);
+    this.createNotifier(this.props.delayTimeout);
   }
 
 
-  componentWillReceiveProps({value, debounceTimeout}) {
+  componentWillReceiveProps({value, delayTimeout}) {
     if (this.isDebouncing) {
       return;
     }
     if (typeof value !== 'undefined' && this.state.value !== value) {
       this.setState({value});
     }
-    if (debounceTimeout !== this.props.debounceTimeout) {
-      this.createNotifier(debounceTimeout);
+    if (delayTimeout !== this.props.delayTimeout) {
+      this.createNotifier(delayTimeout);
     }
   }
 
@@ -117,16 +117,16 @@ export class DelayInput extends React.PureComponent {
   };
 
 
-  createNotifier = debounceTimeout => {
-    if (debounceTimeout < 0) {
+  createNotifier = delayTimeout => {
+    if (delayTimeout < 0) {
       this.notify = () => null;
-    } else if (debounceTimeout === 0) {
+    } else if (delayTimeout === 0) {
       this.notify = this.doNotify;
     } else {
       const debouncedChangeFunc = debounce(event => {
         this.isDebouncing = false;
         this.doNotify(event);
-      }, debounceTimeout);
+      }, delayTimeout);
 
       this.notify = event => {
         this.isDebouncing = true;
@@ -176,7 +176,7 @@ export class DelayInput extends React.PureComponent {
       onChange: _onChange,
       value: _value,
       minLength: _minLength,
-      debounceTimeout: _debounceTimeout,
+      delayTimeout: _debounceTimeout,
       forceNotifyByEnter,
       forceNotifyOnBlur,
       onKeyDown,

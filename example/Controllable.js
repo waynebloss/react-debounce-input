@@ -32,7 +32,7 @@ export class Controllable extends React.Component {
               className="input"
               value={value}
               minLength={2}
-              debounceTimeout={500}
+              delayTimeout={500}
               onChange={e =>
                 this.setState({value: e.target.value, debouncedValue: e.target.value})} />
             {debouncedValue}

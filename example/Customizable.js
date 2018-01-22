@@ -6,7 +6,7 @@ export class Customizable extends React.Component {
   state = {
     value: '',
     minLength: 0,
-    debounceTimeout: 500,
+    delayTimeout: 500,
     infinite: false,
     forceNotifyByEnter: true,
     forceNotifyOnBlur: true
@@ -14,7 +14,7 @@ export class Customizable extends React.Component {
 
   render() {
     const {
-      minLength, infinite, debounceTimeout,
+      minLength, infinite, delayTimeout,
       forceNotifyByEnter, forceNotifyOnBlur,
       value, key
     } = this.state;
@@ -41,12 +41,12 @@ export class Customizable extends React.Component {
               className="input"
               type="range"
               disabled={infinite}
-              value={debounceTimeout}
+              value={delayTimeout}
               step={100}
               min={0}
               max={2000}
-              onChange={e => this.setState({debounceTimeout: parseInt(e.target.value, 10)})} />
-            {debounceTimeout}
+              onChange={e => this.setState({delayTimeout: parseInt(e.target.value, 10)})} />
+            {delayTimeout}
           </label>
 
           <label className="label">
@@ -87,7 +87,7 @@ export class Customizable extends React.Component {
           forceNotifyByEnter={forceNotifyByEnter}
           forceNotifyOnBlur={forceNotifyOnBlur}
           minLength={minLength}
-          debounceTimeout={infinite ? -1 : debounceTimeout}
+          delayTimeout={infinite ? -1 : delayTimeout}
           onChange={e => this.setState({value: e.target.value})}
           onKeyDown={e => this.setState({key: e.key})} />
         <p>Value: {value}</p>

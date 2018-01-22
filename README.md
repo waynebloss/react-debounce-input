@@ -53,7 +53,7 @@ class App extends React.Component {
       <div>
         <DelayInput
           minLength={2}
-          debounceTimeout={300}
+          delayTimeout={300}
           onChange={event => this.setState({value: event.target.value})} />
 
         <p>Value: {this.state.value}</p>
@@ -114,7 +114,7 @@ Value of the Input box. Can be omitted, so component works as usual non-controll
 Minimal length of text to start notify, if value becomes shorter then `minLength` (after removing some characters), there will be a notification with empty value `''`.
 
 
-#### `debounceTimeout`: PropTypes.number (default: 100)
+#### `delayTimeout`: PropTypes.number (default: 100)
 
 Notification debounce timeout in ms. If set to `-1`, disables automatic notification completely. Notification will only happen by pressing `Enter` then.
 
