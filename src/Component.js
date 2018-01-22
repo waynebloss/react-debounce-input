@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 
-
 export class DelayInput extends React.PureComponent {
   static propTypes = {
     element: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
@@ -24,7 +23,6 @@ export class DelayInput extends React.PureComponent {
     trailingNotify: PropTypes.bool,
   };
 
-
   static defaultProps = {
     element: 'input',
     type: 'text',
@@ -41,7 +39,6 @@ export class DelayInput extends React.PureComponent {
     trailingNotify: true,
   };
 
-
   constructor(props) {
     super(props);
 
@@ -52,11 +49,9 @@ export class DelayInput extends React.PureComponent {
     this.isDebouncing = false;
   }
 
-
   componentWillMount() {
     this.createNotifier(this.props);
   }
-
 
   componentWillReceiveProps(nextProps) {
     if (this.isDebouncing) {
@@ -90,13 +85,11 @@ export class DelayInput extends React.PureComponent {
     }
   }
 
-
   componentWillUnmount() {
     if (this.flush) {
       this.flush();
     }
   }
-
 
   onChange = event => {
     event.persist();
@@ -118,7 +111,6 @@ export class DelayInput extends React.PureComponent {
     });
   };
 
-
   onKeyDown = event => {
     const {onKeyDown} = this.props;
 
@@ -131,7 +123,6 @@ export class DelayInput extends React.PureComponent {
     }
   };
 
-
   onBlur = event => {
     const {onBlur} = this.props;
 
@@ -141,7 +132,6 @@ export class DelayInput extends React.PureComponent {
       onBlur(event);
     }
   };
-
 
   createNotifier(props) {
     const {
@@ -178,13 +168,11 @@ export class DelayInput extends React.PureComponent {
     }
   }
 
-
   doNotify = (...args) => {
     const {onChange} = this.props;
 
     onChange(...args);
   };
-
 
   forceNotify = event => {
     if (!this.isDebouncing) {
@@ -204,7 +192,6 @@ export class DelayInput extends React.PureComponent {
       this.doNotify({...event, target: {...event.target, value}});
     }
   };
-
 
   render() {
     const {
