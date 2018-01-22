@@ -1,16 +1,13 @@
-# react-debounce-input [![npm](https://img.shields.io/npm/v/react-debounce-input.svg?style=flat-square)](https://www.npmjs.com/package/react-debounce-input)
+# react-delay-input [![npm](https://img.shields.io/npm/v/react-delay-input.svg?style=flat-square)](https://www.npmjs.com/package/react-delay-input)
 
-[![Gitter](https://img.shields.io/gitter/room/nkbt/help.svg?style=flat-square)](https://gitter.im/nkbt/help)
-
-[![CircleCI](https://img.shields.io/circleci/project/nkbt/react-debounce-input.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/nkbt/react-debounce-input)
-[![Dependencies](https://img.shields.io/david/nkbt/react-debounce-input.svg?style=flat-square)](https://david-dm.org/nkbt/react-debounce-input)
-[![Dev Dependencies](https://img.shields.io/david/dev/nkbt/react-debounce-input.svg?style=flat-square)](https://david-dm.org/nkbt/react-debounce-input#info=devDependencies)
+[![Dependencies](https://img.shields.io/david/waynebloss/react-delay-input.svg?style=flat-square)](https://david-dm.org/waynebloss/react-delay-input)
+[![Dev Dependencies](https://img.shields.io/david/dev/waynebloss/react-delay-input.svg?style=flat-square)](https://david-dm.org/waynebloss/react-delay-input#info=devDependencies)
 
 React component that renders an Input, Textarea or other element with debounced onChange.
 Can be used as drop-in replacement for `<input type="text" />` or `<textarea />`
 
 
-![React Debounce Input](react-debounce-input.gif)
+![React Debounce Input](react-delay-input.gif)
 
 
 ## Installation
@@ -18,7 +15,7 @@ Can be used as drop-in replacement for `<input type="text" />` or `<textarea />`
 ### NPM
 
 ```sh
-npm install --save react react-debounce-input
+npm install --save react react-delay-input
 ```
 
 Don't forget to manually install peer dependencies (`react`) if you use npm@3.
@@ -27,24 +24,24 @@ Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 ### 1998 Script Tag:
 ```html
 <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-debounce-input/build/react-debounce-input.js"></script>
+<script src="https://unpkg.com/react-delay-input/build/react-delay-input.js"></script>
 (Module exposed as `DebounceInput`)
 ```
 
 
 ## Demo
 
-[http://nkbt.github.io/react-debounce-input](http://nkbt.github.io/react-debounce-input)
+[http://waynebloss.github.io/react-delay-input](http://waynebloss.github.io/react-delay-input)
 
 ## Codepen demo
 
-[http://codepen.io/nkbt/pen/VvmzLQ](http://codepen.io/nkbt/pen/VvmzLQ?editors=0010)
+[https://codepen.io/waynebloss/pen/zpbmaP](https://codepen.io/waynebloss/pen/zpbmaP?editors=0010)
 
 ## Usage
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {DebounceInput} from 'react-debounce-input';
+import {DebounceInput} from 'react-delay-input';
 
 class App extends React.Component {
   state = {
@@ -164,8 +161,8 @@ Currently is being developed and tested with the latest stable `Node 8` on `OSX`
 To run example covering all `DebounceInput` features, use `yarn start`, which will compile `example/Example.js`
 
 ```bash
-git clone git@github.com:nkbt/react-debounce-input.git
-cd react-debounce-input
+git clone git@github.com:waynebloss/react-delay-input.git
+cd react-delay-input
 yarn install
 yarn start
 

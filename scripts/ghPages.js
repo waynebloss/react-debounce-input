@@ -12,7 +12,7 @@ require(`./pub`);
 
 const {name} = require(path.join(CWD, `package.json`));
 publish(path.join(CWD, `pub`), {
-  repo: `https://github.com/nkbt/${name}.git`,
+  repo: `https://github.com/waynebloss/${name}.git`,
   branch: `gh-pages`,
   message: `Publish examples`,
   user: {

@@ -8,7 +8,7 @@ import {Ref} from './Ref';
 
 export const App = () => (
   <div className="app">
-    <h1>react-debounce-input</h1>
+    <h1>react-delay-input</h1>
     <section className="section">
       <h2>Example 1. Customizable</h2>
       <Customizable />
