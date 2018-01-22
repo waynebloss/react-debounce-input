@@ -25,7 +25,7 @@ export const App = () => (
     </section>
 
     <section className="section">
-      <h2>Example 4. Debounced Textarea</h2>
+      <h2>Example 4. Delayed Textarea</h2>
       <Textarea />
     </section>
 

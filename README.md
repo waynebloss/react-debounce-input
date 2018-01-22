@@ -7,7 +7,7 @@ React component that renders an Input, Textarea or other element with debounced 
 Can be used as drop-in replacement for `<input type="text" />` or `<textarea />`
 
 
-![React Debounce Input](react-delay-input.gif)
+![React Delay Input](react-delay-input.gif)
 
 
 ## Installation

@@ -27,7 +27,7 @@ export class Controllable extends React.Component {
 
         <div className="config">
           <label className="label">
-            Debounced input:
+            Delayed input:
             <DelayInput
               className="input"
               value={value}

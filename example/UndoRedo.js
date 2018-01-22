@@ -48,7 +48,7 @@ export class UndoRedo extends React.Component {
       <div>
         <div className="config">
           <label className="label">
-            Debounced Input:
+            Delayed Input:
             <DelayInput
               className="input"
               value={this.state.value}

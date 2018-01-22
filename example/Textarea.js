@@ -36,7 +36,7 @@ export class Textarea extends React.Component {
           </label>
 
           <label className="label">
-            Debounce timeout:
+            Delay timeout:
             <input
               className="input"
               type="range"
