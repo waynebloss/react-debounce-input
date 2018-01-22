@@ -1,5 +1,5 @@
 import React from 'react';
-import {DebounceInput} from '../src';
+import {DelayInput} from '../src';
 
 
 export class Customizable extends React.Component {
@@ -83,7 +83,7 @@ export class Customizable extends React.Component {
           </label>
         </div>
 
-        <DebounceInput
+        <DelayInput
           forceNotifyByEnter={forceNotifyByEnter}
           forceNotifyOnBlur={forceNotifyOnBlur}
           minLength={minLength}

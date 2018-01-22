@@ -1,7 +1,7 @@
 'use strict';
 
-const {DebounceInput} = require('./Component');
+const {DelayInput} = require('./Component');
 
-DebounceInput.DebounceInput = DebounceInput;
+DelayInput.DelayInput = DelayInput;
 
-module.exports = DebounceInput;
+module.exports = DelayInput;

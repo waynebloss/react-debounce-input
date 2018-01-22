@@ -1,5 +1,5 @@
 import React from 'react';
-import {DebounceInput} from '../src';
+import {DelayInput} from '../src';
 
 
 export class Textarea extends React.Component {
@@ -83,7 +83,7 @@ export class Textarea extends React.Component {
           </label>
         </div>
 
-        <DebounceInput
+        <DelayInput
           cols="60"
           rows="7"
           element="textarea"

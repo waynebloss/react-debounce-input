@@ -1,5 +1,5 @@
 import React from 'react';
-import {DebounceInput} from '../src';
+import {DelayInput} from '../src';
 
 
 export class UndoRedo extends React.Component {
@@ -49,7 +49,7 @@ export class UndoRedo extends React.Component {
         <div className="config">
           <label className="label">
             Debounced Input:
-            <DebounceInput
+            <DelayInput
               className="input"
               value={this.state.value}
               minLength={2}

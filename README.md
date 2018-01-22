@@ -25,7 +25,7 @@ Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 ```html
 <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-delay-input/build/react-delay-input.js"></script>
-(Module exposed as `DebounceInput`)
+(Module exposed as `DelayInput`)
 ```
 
 
@@ -41,7 +41,7 @@ Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {DebounceInput} from 'react-delay-input';
+import {DelayInput} from 'react-delay-input';
 
 class App extends React.Component {
   state = {
@@ -51,7 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <DebounceInput
+        <DelayInput
           minLength={2}
           debounceTimeout={300}
           onChange={event => this.setState({value: event.target.value})} />
@@ -74,7 +74,7 @@ ReactDOM.render(<App />, appRoot);
 You can specify element="textarea". For Example:
 
 ```js
-<DebounceInput element="textarea" />
+<DelayInput element="textarea" />
 ```
 
 Will result in
@@ -90,7 +90,7 @@ This package has only been tested with `<input />` and `<textarea />` but should
 You can also use a custom react component as the element. For Example:
 
 ```js
-<DebounceInput element={CustomReactComponent} />
+<DelayInput element={CustomReactComponent} />
 ```
 
 Will result in
@@ -138,7 +138,7 @@ See [./example/Ref.js](./example/Ref.js) for usage example.
 #### Arbitrary props will be transferred to rendered `<input>`
 
 ```js
-<DebounceInput
+<DelayInput
   type="number"
   onChange={event => this.setState({value: event.target.value})}
   placeholder="Name"
@@ -158,7 +158,7 @@ Will result in
 
 Currently is being developed and tested with the latest stable `Node 8` on `OSX`.
 
-To run example covering all `DebounceInput` features, use `yarn start`, which will compile `example/Example.js`
+To run example covering all `DelayInput` features, use `yarn start`, which will compile `example/Example.js`
 
 ```bash
 git clone git@github.com:waynebloss/react-delay-input.git

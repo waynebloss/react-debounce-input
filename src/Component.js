@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 
 
-export class DebounceInput extends React.PureComponent {
+export class DelayInput extends React.PureComponent {
   static propTypes = {
     element: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     type: PropTypes.string,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {DebounceInput} from '../src';
+import {DelayInput} from '../src';
 
 
 export class Ref extends React.Component {
@@ -27,7 +27,7 @@ export class Ref extends React.Component {
           </label>
         </div>
 
-        <DebounceInput
+        <DelayInput
           inputRef={ref => {
             this.ref = ref;
           }}

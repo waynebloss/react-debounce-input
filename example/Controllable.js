@@ -1,5 +1,5 @@
 import React from 'react';
-import {DebounceInput} from '../src';
+import {DelayInput} from '../src';
 
 
 export class Controllable extends React.Component {
@@ -28,7 +28,7 @@ export class Controllable extends React.Component {
         <div className="config">
           <label className="label">
             Debounced input:
-            <DebounceInput
+            <DelayInput
               className="input"
               value={value}
               minLength={2}
