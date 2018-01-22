@@ -1,10 +1,10 @@
 {
-  "name": "react-debounce-input",
-  "version": "3.1.0",
-  "description": "React component that renders Input with debounced onChange",
+  "name": "react-delay-input",
+  "version": "3.2.0-delay",
+  "description": "React component that renders Input with delayed onChange",
   "main": "lib/index.js",
   "config": {
-    "component": "DebounceInput",
+    "component": "DelayInput",
     "externals": {
       "react": "React",
       "react-dom": "ReactDOM"
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nkbt/react-debounce-input.git"
+    "url": "https://github.com/waynebloss/react-delay-input.git"
   },
   "keywords": [
     "component",
@@ -35,14 +35,15 @@
     "react",
     "input",
     "debounce",
+    "delay",
     "throttle"
   ],
-  "author": "Nik Butenko <nik@butenko.me>",
+  "author": "Wayne Bloss <waynebloss@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nkbt/react-debounce-input/issues"
+    "url": "https://github.com/waynebloss/react-delay-input/issues"
   },
-  "homepage": "https://github.com/nkbt/react-debounce-input",
+  "homepage": "https://github.com/waynebloss/react-delay-input",
   "peerDependencies": {
     "react": "^15.3.0 || ^16.0.0"
   },
