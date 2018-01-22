@@ -195,13 +195,24 @@ export class DelayInput extends React.PureComponent {
 
   render() {
     const {
+      // Props we need to render.
       element,
       forceNotifyByEnter,
       forceNotifyOnBlur,
       onKeyDown,
       onBlur,
       inputRef,
-      ...props
+      // Props we need to filter from passing to createElement. By assigning
+      // them here, they do not end up in the `...props` copy below.
+      delayMax: _delayMax,
+      delayTimeout: _delayTimeout,
+      leadingNotify: _leadingNotify,
+      minLength: _minLength,
+      onChange: _onChange,
+      trailingNotify: _trailingNotify,
+      value: _value,
+      // The rest of the props.
+      ...props,
     } = this.props;
 
     let maybeOnKeyDown;
