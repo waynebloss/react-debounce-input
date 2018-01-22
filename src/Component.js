@@ -135,7 +135,7 @@ export class DelayInput extends React.PureComponent {
 
   createNotifier(props) {
     const {
-      delayMax: waitMax,
+      delayMax: maxWait,
       delayTimeout,
       leadingNotify: leading,
       trailingNotify: trailing,
