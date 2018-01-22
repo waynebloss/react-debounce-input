@@ -21,19 +21,14 @@ npm install --save react react-delay-input
 Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 
 
-### 1998 Script Tag:
+### Script Tag:
 ```html
 <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-delay-input/build/react-delay-input.js"></script>
 (Module exposed as `DelayInput`)
 ```
 
-
 ## Demo
-
-[http://waynebloss.github.io/react-delay-input](http://waynebloss.github.io/react-delay-input)
-
-## Codepen demo
 
 [https://codepen.io/waynebloss/pen/zpbmaP](https://codepen.io/waynebloss/pen/zpbmaP?editors=0010)
 
@@ -103,21 +98,23 @@ Will result in
 
 Function called when value is changed (debounced) with original event passed through
 
-
 #### `value`: PropTypes.string
 
 Value of the Input box. Can be omitted, so component works as usual non-controlled input.
-
 
 #### `minLength`: PropTypes.number (default: 2)
 
 Minimal length of text to start notify, if value becomes shorter then `minLength` (after removing some characters), there will be a notification with empty value `''`.
 
+#### `delayMax`: PropTypes.number (default: undefined)
+
+The maximum time (in ms) that a change is allowed to be delayed before `onChange` is invoked.
 
 #### `delayTimeout`: PropTypes.number (default: 100)
 
 Notification debounce timeout in ms. If set to `-1`, disables automatic notification completely. Notification will only happen by pressing `Enter` then.
 
+**Note:** If `delayTimeout` is 0 and `leadingNotify` is false, `onChange` is deferred until to the next tick, similar to `setTimeout` with a timeout of 0.
 
 #### `forceNotifyByEnter`: PropTypes.bool (default: true)
 
@@ -134,6 +131,16 @@ Same as `forceNotifyByEnter`, but notification will be sent when focus leaves th
 Will pass `ref={inputRef}` to generated input element. We needed to rename `ref` to `inputRef` since `ref` is a special prop in React and cannot be passed to children. 
 
 See [./example/Ref.js](./example/Ref.js) for usage example.
+
+#### `leadingNotify`: PropTypes.bool (default: false)
+
+True if `onChange` should be invoked on the leading edge of the timeout.
+
+**Note:** If `leadingNotify` and `trailingNotify` are true, `onChange` is invoked on the trailing edge of the timeout only if changes happen more than once during the wait timeout.
+
+#### `trailingNotify`: PropTypes.bool (default: true)
+
+True if `onChange` should be invoked on the trailing edge of the timeout.
 
 #### Arbitrary props will be transferred to rendered `<input>`
 
