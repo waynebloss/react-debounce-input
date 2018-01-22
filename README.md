@@ -3,12 +3,15 @@
 [![Dependencies](https://img.shields.io/david/waynebloss/react-delay-input.svg?style=flat-square)](https://david-dm.org/waynebloss/react-delay-input)
 [![Dev Dependencies](https://img.shields.io/david/dev/waynebloss/react-delay-input.svg?style=flat-square)](https://david-dm.org/waynebloss/react-delay-input#info=devDependencies)
 
-React component that renders an Input, Textarea or other element with debounced onChange.
-Can be used as drop-in replacement for `<input type="text" />` or `<textarea />`
+React component that renders an Input, Textarea or other element with a delayed
+`onChange` event. Can be used as drop-in replacement for `<input type="text" />`
+or `<textarea />`.
 
+Fork of [react-debounce-input](https://github.com/nkbt/react-debounce-input)
+to add options (`delayMax`, `leadingNotify` and `trailingNotify`), minor code 
+improvements and changes to make cross platform maintenance more palatable.
 
 ![React Delay Input](react-delay-input.gif)
-
 
 ## Installation
 
