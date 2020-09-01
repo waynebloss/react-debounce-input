@@ -1,4 +1,8 @@
-# react-delay-input [![npm](https://img.shields.io/npm/v/react-delay-input.svg?style=flat-square)](https://www.npmjs.com/package/react-delay-input)
+## Transferred
+
+This repo was transferred to [gencer/react-delay-input](https://github.com/gencer/react-delay-input)
+
+## react-delay-input [![npm](https://img.shields.io/npm/v/react-delay-input.svg?style=flat-square)](https://www.npmjs.com/package/react-delay-input)
 
 [![Dependencies](https://img.shields.io/david/waynebloss/react-delay-input.svg?style=flat-square)](https://david-dm.org/waynebloss/react-delay-input)
 [![Dev Dependencies](https://img.shields.io/david/dev/waynebloss/react-delay-input.svg?style=flat-square)](https://david-dm.org/waynebloss/react-delay-input#info=devDependencies)
